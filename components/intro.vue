@@ -6,10 +6,15 @@ onMounted(() => {
         inset: ['0', '24px'],
         borderRadius: ['0', '24px'],
     }, { type: 'spring', stiffness: 100, damping: 10 }).then(() => {
-        animate('#square', {
-            opacity: [0, 0.3],
-            transform: 'translateY(-130px) scale(1.5)',
-        }, { type: 'spring', stiffness: 50, damping: 20 })
+        animate('#title', {
+            opacity: [0, 1],
+            transform: 'translateY(-10px)',
+        }, { type: 'spring', stiffness: 100, damping: 10 }).then(() => {
+            animate('#square', {
+                opacity: [0, 0.3],
+                transform: 'translateY(-130px) scale(1.5)',
+            }, { type: 'spring', stiffness: 50, damping: 20 })
+        })
     })
 })
 </script>
@@ -28,7 +33,7 @@ onMounted(() => {
             inset-0
             flex="~ col" items-center justify-center
         >
-            <div heading-h2-semibold relative z-2>
+            <div id="title" heading-h2-semibold relative z-2 op-0>
                 <span>Tela</span> <span op-60>Build</span>
             </div>
             <div id="square" relative op-0 scale-100 z-1>
