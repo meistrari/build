@@ -16,7 +16,7 @@
     "vue": "latest",
     "vue-router": "latest"
   },
-  "packageManager": "^pnpm@9.0.0",
+  "packageManager": "pnpm@9.11.2",
   "devDependencies": {
     "@antfu/eslint-config": "3.11.2",
     "eslint": "9.16.0"
