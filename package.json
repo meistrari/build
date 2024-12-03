@@ -1,0 +1,24 @@
+{
+  "name": "tela-build",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "motion": "^11.13.1",
+    "nitropack": "2.10.4",
+    "nuxt": "^3.14.1592",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "packageManager": "^pnpm@9.0.0",
+  "devDependencies": {
+    "@antfu/eslint-config": "3.11.2",
+    "eslint": "9.16.0"
+  }
+}
