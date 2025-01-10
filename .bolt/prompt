@@ -1,0 +1,274 @@
+# Tela UI Components Guide
+
+This guide covers the usage of various UI components available in the Tela UI library. Each component is designed to be reusable and customizable for different use cases.
+
+## Table of Contents
+- [Animated Number](#animated-number)
+- [Avatar](#avatar)
+- [Button](#button)
+- [Checkbox](#checkbox)
+- [Collapsible Section](#collapsible-section)
+- [Dropdown Menu](#dropdown-menu)
+- [Hover Card](#hover-card)
+- [Input](#input)
+- [Popover](#popover)
+- [Sheet](#sheet)
+- [Side Sheet](#side-sheet)
+- [Skeleton](#skeleton)
+- [Tooltip](#tooltip)
+
+## Animated Number
+
+A component for animating number transitions with optional currency formatting.
+
+### Props
+- `value`: Number to display
+- `precision`: Decimal precision
+- `currency`: Optional currency code (e.g., 'BRL')
+- `locales`: Array of locale strings for formatting (e.g., ['pt-BR'])
+
+```vue
+<TelaAnimatedNumber :value="123456789" currency="BRL" :locales="['pt-BR']" />
+```
+
+## Avatar
+
+A component for displaying user avatars with fallback to initials.
+
+### Props
+- `image`: URL of the avatar image
+- `size`: Size of avatar ('xs', 'sm', 'md')
+- `alt`: Alternative text and source for initials
+
+```vue
+<TelaAvatar 
+  image="https://example.com/avatar.jpg"
+  size="md"
+  alt="John Doe"
+/>
+```
+
+## Button
+
+A versatile button component with multiple variants and states.
+
+### Props
+- `size`: Button size ('xs', 'sm', 'md', 'lg')
+- `variant`: Button style ('primary', 'secondary', 'ghost', 'success', 'danger')
+- `icon`: Icon class to display
+- `loading`: Show loading state
+- `leading`: Place icon before text
+- `disabled`: Disable button
+- `to`: URL for link buttons
+- `target`: Link target attribute
+
+```vue
+<TelaButton 
+  size="md"
+  variant="primary"
+  icon="i-ph-plus"
+  :leading="true"
+>
+  Add Item
+</TelaButton>
+```
+
+## Checkbox
+
+A simple checkbox input component.
+
+### Props
+- `disabled`: Disable checkbox
+- `size`: Checkbox size ('sm', 'md', 'lg')
+
+```vue
+<TelaCheckbox size="md" :disabled="false" />
+```
+
+## Collapsible Section
+
+A section that can be expanded/collapsed.
+
+### Props
+- `title`: Title when section is open
+- `titleClosed`: Title when section is closed
+- `icon`: Icon to display in trigger
+- `defaultOpen`: Whether section starts open
+
+```vue
+<TelaCollapsibleSection
+  title="Close"
+  titleClosed="Open"
+  :defaultOpen="true"
+>
+  <p>Collapsible content here</p>
+</TelaCollapsibleSection>
+```
+
+## Dropdown Menu
+
+A customizable dropdown menu with optional grouping and search.
+
+### Props
+- `items`: Array of menu items
+- `allowSearch`: Enable search functionality
+
+```vue
+<TelaDropdownMenu
+  :items="[
+    {
+      label: 'Item 1',
+      icon: 'i-ph-plus',
+      click: () => {},
+      group: 'Optional Group'
+    }
+  ]"
+  :allowSearch="true"
+>
+  <button>Trigger</button>
+</TelaDropdownMenu>
+```
+
+## Hover Card
+
+A card that appears when hovering over an element.
+
+### Props
+- `align`: Alignment ('start', 'center', 'end')
+- `side`: Position ('top', 'right', 'bottom', 'left')
+- `open`: Control open state manually
+
+```vue
+<TelaHoverCard align="center" side="bottom">
+  <button>Hover me</button>
+  <template #content>
+    <div>Hover card content</div>
+  </template>
+</TelaHoverCard>
+```
+
+## Input
+
+A flexible input component with various features.
+
+### Props
+- `size`: Input size ('sm', 'md')
+- `label`: Input label
+- `placeholder`: Placeholder text
+- `type`: Input type (including 'textarea')
+- `showClearButton`: Show clear input button
+- `icon`: Input icon
+- `error`: Error message
+- `disabled`: Disable input
+
+```vue
+<TelaInput
+  label="Search"
+  placeholder="Enter text..."
+  icon="i-ph-magnifying-glass"
+  :showClearButton="true"
+/>
+```
+
+## Popover
+
+A popup content container triggered by clicking.
+
+### Props
+- `open`: Control open state
+- `side`: Position ('top', 'right', 'bottom', 'left')
+- `align`: Alignment ('start', 'center', 'end')
+
+```vue
+<TelaPopover>
+  <TelaPopoverTrigger>
+    <button>Click me</button>
+  </TelaPopoverTrigger>
+  <TelaPopoverContent>
+    Popover content here
+  </TelaPopoverContent>
+</TelaPopover>
+```
+
+## Sheet
+
+A modal-like component that slides in from the edges.
+
+### Props
+- `title`: Sheet title
+- `modalWidth`: Width ('md', 'lg')
+- `compact`: Enable compact mode
+- `hideDividers`: Hide section dividers
+- `overlayClass`: Custom overlay classes
+- `fullscreen`: Enable fullscreen mode
+
+```vue
+<TelaSheet
+  title="Sheet Title"
+  modalWidth="md"
+  :compact="false"
+>
+  <div>Sheet content</div>
+</TelaSheet>
+```
+
+## Side Sheet
+
+A sheet that slides in from the side of the screen.
+
+### Props
+- `title`: Sheet title
+- `overlayClass`: Custom overlay classes
+
+```vue
+<TelaSideSheet title="Side Sheet">
+  <div>Side sheet content</div>
+</TelaSideSheet>
+```
+
+## Skeleton
+
+A loading placeholder component.
+
+```vue
+<TelaSkeleton style="width: 300px; height: 40px; border-radius: 8px;" />
+```
+
+## Tooltip
+
+A simple tooltip component for showing additional information on hover.
+
+### Props
+- `content`: Tooltip text
+- `align`: Alignment ('start', 'center', 'end')
+- `side`: Position ('top', 'right', 'bottom', 'left')
+
+```vue
+<TelaTooltip content="Helpful tip" align="center" side="bottom">
+  Hover me
+</TelaTooltip>
+```
+
+## Best Practices
+
+1. Always provide meaningful alt text for TelaAvatar components
+2. Use appropriate button variants based on action importance
+3. Include clear error messages for TelaInput components when validation fails
+4. Consider mobile responsiveness when using TelaSheet and TelaSideSheet components
+5. Use TelaSkeleton components during data loading for better UX
+6. Keep tooltip content concise and helpful
+7. Use appropriate icon sizes that match component scales
+8. Implement proper keyboard navigation for dropdown menus
+9. Consider loading states for interactive components
+10. Maintain consistent sizing across related components
+
+## Accessibility
+
+All Tela components support basic accessibility features:
+- Keyboard navigation
+- ARIA labels and roles
+- Focus management
+- Screen reader compatibility
+- Color contrast compliance
+
+Remember to maintain these accessibility features when implementing the components in your application.
