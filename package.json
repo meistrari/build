@@ -22,7 +22,7 @@
     "@antfu/eslint-config": "3.11.2",
     "@iconify-json/ph": "^1.2.2",
     "eslint": "9.16.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "pnpm": {
     "overrides": {
