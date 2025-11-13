@@ -1,9 +1,14 @@
 <template>
     <div
-        w-full flex items-center justify-between
-        py-16px
-        b="b-.5px gray-160"
+        w-full
+        px-40px py-20px
+        bg
+        b="b-.5px border"
     >
-        Sample Application
+        <div flex items-center justify-between max-w-6xl mx-auto>
+            <h1 heading-h5-medium text-secondary>
+                tela/build
+            </h1>
+        </div>
     </div>
 </template>

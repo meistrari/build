@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "../node_modules/.c12/github_meistrari_tela_CrY2kogXF5",
+    "paths": {
+      "~/*": [
+        "../node_modules/.c12/github_meistrari_tela_CrY2kogXF5/*"
+      ],
+      "@/*": [
+        "../node_modules/.c12/github_meistrari_tela_CrY2kogXF5/*"
+      ]
+    },
+    "skipLibCheck": true
+  },
+  "include": [
+    "../node_modules/.c12/github_meistrari_tela_CrY2kogXF5/**/*.ts",
+    "../node_modules/.c12/github_meistrari_tela_CrY2kogXF5/**/*.tsx",
+    "../node_modules/.c12/github_meistrari_tela_CrY2kogXF5/**/*.vue",
+    "../**/*.d.ts"
+  ]
+}
